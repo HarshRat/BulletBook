@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Edit Comment</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+	</head>
+	<body>
+		<nav class= "cyan accent-4" role="navigation">
+            <div class="nav-wrapper container">
+
+            Hello <a href = '/profile'>{{ username }}</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href = '/profile'>Profile</a></li>
+                    <li><a href = '/'>View Bulletin</a></li>
+                    <li><a href = '/logout'>Logout</a></li>
+                </ul>
+            </div>
+        </nav><br><br>
+        <div class = 'container'>
+			<div  align="Center">
+				<h1 class = "header center">Edit the Bulletin</h1><br><br>
+			</div>
+			<form method = 'POST'>
+				<textarea rows="4" cols=50% name = "content" placeholder="Post a bulletin"></textarea>
+		   		<button class = 'btn waves-effect waves-light btn-small right' type="submit" id = 'submit' name="submit">Edit Bullet</button>
+			</form>
+		</div>
+	</body>
+</html>

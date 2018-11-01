@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign Up</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+		<script type="text/javascript">
+			var disable = function(){
+				document.getElementById('submit').disabled = true;
+			}
+			var check = function() {
+				if (document.getElementById('password').value !=
+				document.getElementById('confirm_password').value)
+				{
+					alert("Make sure Password and Confirm Password are the same")
+					document.getElementById('submit').disabled = true;
+				}
+				else
+				{
+					document.getElementById('submit').disabled = false;
+				}
+			}
+		</script>
+	</head>
+	<body onload="disable()" class = "grey lighten-3" style = "background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/0kjHIH6/dark-grunge-background-for-text-and-titles_vmmz5fxyl__F0000.png);">
+	  <div class = "card">
+  		<div class="row">
+    		<form class="col s12" method="POST" action="">
+    			<h3 class = "center-align cyan-text text-darken-2">Sign Up</h3>
+      			<div class="row">
+        			<div class="input-field col s5 offset-s1">
+          				<input name="first_name" type="text" class="validate" id = "first_name" required>
+		  				<label for = "first_name">First Name</label>
+						<span class = "helper-text" data-error = "Enter First Name"></span>
+        			</div>
+        			<div class="input-field col s5">
+          				<input name="last_name" type="text" class="validate" id = "last_name" required>
+		  				<label for = "last_name">Last Name</label>
+						<span class = "helper-text" data-error = "Enter Last Name"></span>
+        			</div>
+			  	</div>
+	  			<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<input name="email" type="email" class="validate" id = "email" required>
+						<label for = "email">E-Mail</label>
+						<span class = "helper-text" data-error = "Enter Email Address"></span>
+					</div>
+	  			</div>
+				<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<input name = "username" type="text" class="validate" id = "username" required>
+						<label for = "email">Username</label>
+						<span class = "helper-text" data-error = "Enter Username"></span>
+					</div>
+	  			</div>
+      			<div class="row">
+        			<div class="input-field col s10 offset-s1">
+          				<input name="password" type="password" id = "password" maxlength="20" minlength="8" class="validate" required>
+		  				<label for = "password">Password</label>
+						<span class = "helper-text" data-error = "Enter Password"></span>
+					</div>
+      			</div>
+	  			<div class="row">
+        			<div class="input-field col s10 offset-s1">
+          				<input name="cpassword" type="password" id = "confirm_password" maxlength="20" minlength="8" class="validate" onblur="check()" required>
+		  				<label for = "confirm_password">Confirm Password</label>
+					</div>
+      			</div>
+      			<div class="row">
+					<div class="col s6 offset-s1">
+						Already a Member? <a class="waves-effect waves-teal btn-flat btn-small" href="/signin">Sign In</a>
+					</div>
+					<div class="col s4 offset-s1" onclick="check()">
+          				<button type="submit" class = "btn waves-effect waves-light btn-small" id = 'submit' name="signup" onclick="check()"> Sign Up </button>
+        			</div>
+      			</div>
+				<div class="row">
+					{% if error != '' %}
+					<div class = "col s12 offset-s1">
+          				<p style="color:red;">* {{error}}</a></p>
+					</div>
+					{% endif %}
+      			</div>
+    		</form>
+  		</div>
+	  </div>
+	  <div class = 'card panel'>
+		<div class = 'card-text'>
+		  	Made using <a href="https://materializecss.com/">Materialize</a>
+		</div>
+	  </div>
+	</body>
+</html>

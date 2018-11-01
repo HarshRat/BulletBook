@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<title>Sign In</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+	</head>
+	<body class = "grey lighten-3" style = "background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/0kjHIH6/dark-grunge-background-for-text-and-titles_vmmz5fxyl__F0000.png);" >
+	  <div class = "card">
+		<div class="row">
+    		<form class="col s12" action="" method="POST">
+    			<h3 class = "center-align cyan-text text-darken-2">Sign In</h3>
+      			<div class="row">
+        			<div class="input-field col s10 offset-s1">
+          				<input name="email" type="text" class="validate" id = "email" required>
+		  				<label for="email">E-Mail</label>
+						<span class = "helper-text" data-error = "Enter Email"></span>
+					</div>
+      			</div>
+      			<div class="row">
+        			<div class="input-field col s10 offset-s1">
+          				<input name="password" type="password" class="validate" id = "password" required>
+		  				<label for="password">Password</label>
+						<span class = "helper-text" data-error = "Enter Password"></span>
+					</div>
+      			</div>
+				<div class="row">
+					<div class = "col s6 offset-s1">
+						Not a member? <a href="/" class = "waves-effect waves-teal btn-flat btn-small">Sign Up</a>
+					</div>
+          			<div class="right-align col s3 offset-s1">
+            			<button class = "btn waves-effect waves-light btn-small" type="submit" name="signup" id = "submit"> Sign In</button>
+          			</div>
+					<div class = "col s1">
+        		</div>
+    		</form>
+  		  </div>
+	    </div>
+      </div>
+	  <div class = 'card-panel'>
+	  	  Made using <a href="https://materializecss.com/">Materialize</a>
+	  </div>
+    </body>
+</html>
